@@ -1,0 +1,35 @@
+:root{
+    --alto_box: 100px;
+    --ancho_box: 100px;
+    --mida_del_text: calc(var(--alto_box) + 20px);
+    --padding_box: 20px;
+    --margin_box: 10px;
+}
+
+body{
+    font-family: arial;
+    font-weight: 600;
+    font-size: var(--mida_del_text);
+    color: white;
+}
+.box{
+    display: flex;
+    height: var(--alto_box);
+    width: var(--ancho_box);
+    background: salmon;
+    margin: var(--margin_box);
+    padding: var(--padding_box);
+    align-items: center;
+    justify-content: center;
+
+    transition: height .5s, width, .5s;
+}
+    .box:hover{
+         background: lightgreen;
+         height: calc((var(--alto_box) + var(--padding_box) + var(--margin_box)) * 2);
+         width: calc((var(--ancho_box) + var(--padding_box) + var(--margin_box)) * 2);
+    }
+.container{
+    display: flex;
+    flex-flow: row wrap;
+}
