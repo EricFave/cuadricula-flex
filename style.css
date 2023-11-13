@@ -1,9 +1,9 @@
 :root{
-    --alt_box: 200px;
-    --ample_box: 200px;
+    --alt_box: 100px;
+    --ample_box: 100px;
     --mida_del_text: calc(var(--alt_box) + 10px);
     --padding_box: 30px;
-    --margin_box: 10px;
+    --margin_box: calc((var(--ample_box) * 5) / 100);
 }
 body{
     font-family: monospace;
@@ -12,7 +12,7 @@ body{
     color: white;
     margin: 20px 5vw;
     user-select: none;
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(39, 39, 39) !important;
 }
 .box{
     display: flex;
@@ -24,14 +24,14 @@ body{
     margin: var(--margin_box);
     padding: var(--padding_box);
     
-    border-radius: 20px;
+    border-radius: calc((var(--ample_box) * 20) / 100);
     overflow: visible;
     background: salmon;
     text-shadow: 5px 5px 10px rgb(39, 39, 39);
 
     transition: 
      height .25s linear, 
-     width .5s ease-in,
+     width .50s ease-in,
      font-size .7s ease;
 
         &:hover{
@@ -42,9 +42,8 @@ body{
             background: rgb(151, 100, 140);
             height: calc((var(--alt_box) + var(--padding_box) + var(--margin_box)) * 2);
             width: calc((var(--ample_box) + var(--padding_box) + var(--margin_box)) * 2);
-            font-size: calc(var(--mida_del_text)*2.25);
+            font-size: calc(var(--mida_del_text) * 2.25);
         }
-       
 }
 .container{
     display: flex;
