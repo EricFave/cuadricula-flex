@@ -1,35 +1,52 @@
 :root{
-    --alto_box: 100px;
-    --ancho_box: 100px;
-    --mida_del_text: calc(var(--alto_box) + 20px);
-    --padding_box: 20px;
+    --alt_box: 200px;
+    --ample_box: 200px;
+    --mida_del_text: calc(var(--alt_box) + 10px);
+    --padding_box: 30px;
     --margin_box: 10px;
 }
-
 body{
-    font-family: arial;
+    font-family: monospace;
     font-weight: 600;
     font-size: var(--mida_del_text);
     color: white;
+    margin: 20px 5vw;
+    user-select: none;
+    background-color: rgb(39, 39, 39);
 }
 .box{
     display: flex;
-    height: var(--alto_box);
-    width: var(--ancho_box);
-    background: salmon;
-    margin: var(--margin_box);
-    padding: var(--padding_box);
     align-items: center;
     justify-content: center;
 
-    transition: height .5s, width, .5s;
+    height: var(--alt_box);
+    width: var(--ample_box);
+    margin: var(--margin_box);
+    padding: var(--padding_box);
+    
+    border-radius: 20px;
+    overflow: visible;
+    background: salmon;
+    text-shadow: 5px 5px 10px rgb(39, 39, 39);
+
+    transition: 
+     height .25s linear, 
+     width .5s ease-in,
+     font-size .7s ease;
+
+        &:hover{
+            cursor: pointer;
+            z-index: 1;
+        }
+        &:active{
+            background: rgb(151, 100, 140);
+            height: calc((var(--alt_box) + var(--padding_box) + var(--margin_box)) * 2);
+            width: calc((var(--ample_box) + var(--padding_box) + var(--margin_box)) * 2);
+            font-size: calc(var(--mida_del_text)*2.25);
+        }
+       
 }
-    .box:hover{
-         background: lightgreen;
-         height: calc((var(--alto_box) + var(--padding_box) + var(--margin_box)) * 2);
-         width: calc((var(--ancho_box) + var(--padding_box) + var(--margin_box)) * 2);
-    }
 .container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap;  
 }
